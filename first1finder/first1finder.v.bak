@@ -1,0 +1,34 @@
+
+module first1finder(pos, inp);
+
+input [7:0] inp;
+output [3:0] pos;
+
+reg count, pos;
+integer i;
+
+
+initial begin
+	
+    count = 1'b1;
+    i = 0;
+
+    while( (i < 8) && count) 
+    begin
+        if(inp[i]) begin
+            count = 1'b0;
+            pos = $itor(i,4);
+            // $display("i = %d, pos = %b, count = %b", i,pos,count);
+        end
+            
+        else
+            i = i + 1;
+    end
+
+    // $display("i = %d, pos = %b, count = %b", i,pos,count);
+
+
+end
+
+
+endmodule

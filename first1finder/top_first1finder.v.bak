@@ -1,0 +1,20 @@
+
+module top_first1finder;
+
+wire [3:0] POS;
+reg [7:0] INP;
+
+first1finder first1finder_inst(POS, INP);
+
+initial begin
+
+    $monitor("INP = %b , POS = %b", INP,POS);
+    
+    INP = 8'b00000001;
+    #10 INP = 8'b00100010;
+    #10 INP = 8'b00000000;
+    #10 INP = 8'b10101001;
+
+end
+
+endmodule
